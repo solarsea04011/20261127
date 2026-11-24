@@ -99,6 +99,7 @@ section{max-width:640px; margin:0 auto; padding:30px 16px 4px; scroll-margin-top
 .fine{font-size:13px; margin-top:4px}
 
 /* ---------- 每日行程 ---------- */
+
 .daytabs-wrap{position:sticky; top:calc(var(--nav-h) + 3px); z-index:40; background:var(--paper); margin:0 -16px; padding:8px 16px 10px; border-bottom:3px solid var(--ink)}
 .daytabs{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 6px}
 .daytabs::-webkit-scrollbar{display:none}
@@ -242,6 +243,13 @@ footer svg{width:150px; height:auto; display:block; margin:0 auto 6px}
   }
   .anim-snow{display:none}
 }
+
+.wxbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 18px;margin:14px 0 4px}
+.wxbar .wxic svg{width:44px;height:30px;display:block}
+.wxbar .wxt{font-size:20px}
+.wxbar .wxt b{font-size:22px}
+.wxbar .chip{font-size:13px;padding:4px 12px}
+.wxbar .wxw{flex-basis:100%;font-size:12px;opacity:.7}
 </style>
 </style>
 </head>
@@ -463,16 +471,18 @@ footer svg{width:150px; height:auto; display:block; margin:0 auto 6px}
 <section id="weather">
   <h2 class="sec-title"><span class="dot" style="background:var(--sky)"></span>天氣預報</h2>
   <div class="card" style="background:var(--sky)">
-    <p class="fine" style="margin-top:0">11/24 晚上查的預報，依每天實際所在地整理。離出發越近越準，出發前一天請再看一次即時預報。</p>
-    <table class="shows"><thead><tr><th>日期</th><th>所在地</th><th>最高 / 最低</th></tr></thead><tbody>
-      <tr><td>11/27（五）</td><td>十勝川溫泉</td><td>8° / -2°</td></tr>
-      <tr><td>11/28（六）</td><td>十勝 → 美瑛</td><td>12° / 2° → 7° / -1°</td></tr>
-      <tr><td>11/29（日）</td><td>美瑛 → 札幌</td><td><b>-1° / -4°</b> → 3° / 1°</td></tr>
-      <tr><td>11/30（一）</td><td>札幌</td><td>9° / 0°</td></tr>
-      <tr><td>12/1（二）</td><td>札幌</td><td>9° / 3°</td></tr>
+    <p class="fine" style="margin-top:0">日本氣象協會 tenki.jp 11/24 22:00 發布的預報，依每天實際所在地整理。離出發越近越準，出發前一天請再看一次即時預報。</p>
+    <table class="shows"><thead><tr><th>日期</th><th>所在地</th><th>天氣</th><th>氣溫</th><th>降水</th></tr></thead><tbody>
+      <tr><td>11/27（五）</td><td>十勝川溫泉</td><td>多雲時晴</td><td>-4 ~ 10℃</td><td>40%</td></tr>
+      <tr><td rowspan="2">11/28（六）</td><td>十勝（早上）</td><td>陰</td><td>3 ~ 9℃</td><td>40%</td></tr>
+      <tr><td>美瑛（下午）</td><td><b>陰轉雨</b></td><td>7 ~ 9℃</td><td><b>90%</b></td></tr>
+      <tr><td rowspan="2">11/29（日）</td><td>美瑛（早上）</td><td>陰</td><td><b>-2 ~ -1℃</b></td><td>40%</td></tr>
+      <tr><td>札幌（下午）</td><td>陰</td><td>0℃</td><td>40%</td></tr>
+      <tr><td>11/30（一）</td><td>札幌</td><td>陰</td><td>0 ~ 6℃</td><td>40%</td></tr>
+      <tr><td>12/1（二）</td><td>札幌</td><td>多雲時晴</td><td>4 ~ 9℃</td><td>40%</td></tr>
     </tbody></table>
-    <div class="note warn" style="margin-top:14px"><b>穿著與開車</b>早晚幾乎都在 0° 上下，11/29 美瑛整天零下，是整趟最冷的時候，早上拍攝要穿最厚。白天和晚上溫差可以到 10 度，洋蔥式穿法最方便。零下的早晨和傍晚，路面容易出現看不出來的黑冰，起步、煞車都要放輕。</div>
-    <p class="fine">這份預報沒有提供降雪機率，所以下不下雪要以即時預報為準。即時預報：<a href="https://www.jma.go.jp/bosai/forecast/" target="_blank" rel="noopener">日本氣象廳</a>・<a href="https://tenki.jp/" target="_blank" rel="noopener">tenki.jp</a>。</p>
+    <div class="note warn" style="margin-top:14px"><b>要注意的兩天</b>11/28 下午美瑛下雨（降雨機率 90%），剛好是翻狩勝峠、抵達緩慢瑞萃和傍晚拍攝的時間，山路要放慢，相機記得帶防雨罩。<br>11/29 雨停後美瑛整天在零下，前一天的雨水會結成看不出來的黑冰，早上出發前先除霜，起步和煞車都要輕。<br>其他天早晚都在 0℃ 上下，白天回到 6–12℃，洋蔥式穿法最方便。</div>
+    <p class="fine">即時預報：<a href="https://www.jma.go.jp/bosai/forecast/" target="_blank" rel="noopener">日本氣象廳</a>・<a href="https://tenki.jp/" target="_blank" rel="noopener">tenki.jp</a>。</p>
   </div>
 </section>
 
@@ -618,6 +628,7 @@ var TAGS = {
 
 var DAYS = [
  { n:1, date:'11/27', wd:'五', title:'飛札幌，自駕到十勝川溫泉', color:'sky',
+   wx:{ic:'sunCloud', t:'多雲時晴', temp:'-4 ~ 10℃', where:'十勝川溫泉', chips:[['降雨機率 40%','sky'],['夜裡降到零下','yellow']]},
    route:'桃園 T1 → 新千歲機場取車 → 道東道 → 十勝川溫泉 觀月苑（約 165–180 km）',
    stops:[
      {t:'07:00–07:15', title:'抵達桃園機場第1航廈', m:[], d:'起飛前約2小時報到（星宇在第1航廈）', g:[['','桃園國際機場第一航廈']]},
@@ -629,7 +640,6 @@ var DAYS = [
      {t:'18:30 前後', title:'十勝川溫泉 觀月苑 入住、懷石晚餐、泡湯', must:1, m:['walk'], d:'河東郡音更町十勝川温泉南14-2・相連房 2 間・含懷石晚餐＋隔天早餐・免費停車・植物性モール溫泉', g:[['','十勝川温泉 観月苑']]}
    ],
    notes:[
-     {k:'info', h:'天氣（11/24 預報）', b:'十勝川溫泉 高 8° / 低 -2°（新千歲一帶比較暖）。晚上 18:30 抵達時應該已在零度上下，下交流道後的一般道路注意結冰。'},
      {k:'warn', h:'第一天是夜間山路', b:'11 月底北海道約 16 點天黑，出發後大概一小時就全黑；道東道在占冠、トマム一帶是山區，可能積雪結冰。剛下飛機比較疲累，建議兩人輪流開、速度放慢，不要趕。開車的人如果沒有雪地經驗，第一天改搭特急會比較穩（見下方備案）。'},
      {k:'info', h:'備案：第一天搭特急', html:'新千歲空港搭快速エアポート 1 站到「南千歲」轉特急，全車指定席：<table class="shows"><thead><tr><th>列車</th><th>南千歲 發 → 帶廣 著</th></tr></thead><tbody>'
        +'<tr><td>とかち5號</td><td>16:26 → 18:39</td></tr>'
@@ -638,6 +648,7 @@ var DAYS = [
      {k:'food', h:'含懷石晚餐', b:'訂單含 11/27 晚餐與 11/28 早餐，訂房備註的抵達時間是 18:00–19:00。懷石料理通常有固定開始時間，請先跟飯店確認晚餐幾點開始、最晚幾點；路上若因雪況會晚到，先打電話 <a href="tel:+81155462001">0155-46-2001</a>。訂房時有請飯店確認兩間房都是床（不是和室鋪被），入住時再確認一次。'}
    ]},
  { n:2, date:'11/28', wd:'六', title:'農場參訪 → 緩慢瑞萃', color:'green',
+   wx:{ic:'rain', t:'陰轉雨', temp:'7 ~ 9℃', where:'美瑛（十勝 陰 3 ~ 9℃）', chips:[['降雨機率 90%','sky'],['下午有雨・山路慢開','coral']]},
    route:'十勝川溫泉 → 中札內・花畑牧場 → 狩勝峠 → 富良野 → 美瑛・緩慢瑞萃 十勝岳（約 220–245 km）',
    stops:[
      {t:'07:30–08:45', title:'觀月苑早餐（已含）→ 退房，前往中札內', m:['taxi'], d:'經帶廣市區往南，約 1 小時；退房時間 10:00', g:[['導航・全天兩段','https://www.google.com/maps/dir/?api=1&origin=Tokachigawa+Onsen+Kangetsuen,+Otofuke,+Hokkaido,+Japan&destination=43.5601273,142.5019171&waypoints=Hanabatake+Farm,+Nakasatsunai,+Hokkaido,+Japan&travelmode=driving']]},
@@ -648,7 +659,6 @@ var DAYS = [
      {t:'晚上', title:'晚餐（未含，待安排）', m:['walk'], d:'訂房只含 11/29 早餐：可預約館內主餐廳多道式晚餐，或在富良野、美瑛買食材回 Villa 廚房自己煮'}
    ],
    notes:[
-     {k:'info', h:'天氣（11/24 預報）', b:'出發地十勝 高 12° / 低 2°；目的地美瑛 高 7° / 低 -1°。這天是整趟最暖的一天，對翻狩勝峠有利，但山上溫度會比平地低。'},
      {k:'info', h:'離開牧場的時間怎麼抓', html:'<table class="shows"><thead><tr><th>離開花畑牧場</th><th>預估抵達緩慢瑞萃</th></tr></thead><tbody>'
        +'<tr><td>10:45（較理想）</td><td>14:15–15:15</td></tr>'
        +'<tr><td>11:00（建議）</td><td>14:30–15:30</td></tr>'
@@ -660,6 +670,7 @@ var DAYS = [
      {k:'info', h:'緩慢瑞萃 十勝岳 Adagio Retreat Tokachidake', b:'薰衣草森林集團的新高端旅宿品牌，2026/8/1 開幕。33 間客房：17 間飯店客房＋16 棟獨棟 Villa（附廚房、桑拿）。主餐廳提供早餐與多道式晚餐。<br>地址：〒071-0242 北海道上川郡美瑛町字水沢清水ケ丘。日文名「アダージョリトリート 十勝岳」。'}
    ]},
  { n:3, date:'11/29', wd:'日', title:'晨間拍攝 → 回札幌', color:'coral',
+   wx:{ic:'cloud', t:'陰', temp:'-2 ~ -1℃', where:'美瑛（札幌 0℃）', chips:[['降雨機率 40%','sky'],['整天零下・路面易結冰','coral']]},
    route:'緩慢瑞萃 十勝岳 → 旭川 → 道央道 → 札幌 THE GATE HOTEL（約 165–180 km）',
    stops:[
      {t:'07:00–08:30', title:'晨景拍攝（館外）', must:1, m:['walk'], d:'清晨光線＋雪景：建築外觀、Villa、十勝連峰', g:[['','アダージョリトリート 十勝岳']]},
@@ -674,7 +685,6 @@ var DAYS = [
      {t:'晚上', title:'自由・居酒屋', m:['walk'], d:'見「美食」區的札幌居酒屋清單'}
    ],
    notes:[
-     {k:'info', h:'天氣（11/24 預報）', b:'美瑛 高 -1° / 低 -4°（整天零下，早上拍攝最冷）；札幌 高 3° / 低 1°。氣溫比前一天掉了快 10 度，早上上路前先除霜、注意路面結冰。'},
      {k:'info', h:'拍攝提醒', b:'只有早上幾小時能拍，畫面集中在 7:00–10:30。低溫下電池掉很快，備用電池放內層口袋；從室外進室內先把相機放進包裡，避免鏡頭起霧。空拍機在日本有飛行規範，若要飛請先查好。'},
      {k:'info', h:'順路可停', b:'時間有餘的話，往旭川途中會經過美瑛市區，可以在美瑛選果買玉米麵包、美瑛牛奶。美瑛丘陵多是私人農地，拍照請停在展望公園或停車場，不要進田裡、不要停路邊。'},
      {k:'warn', h:'道路', b:'冬季美瑛往十勝岳溫泉的道道966號封閉；道央道遇大雪可能限速。傍晚前進札幌比較安心。'},
@@ -685,6 +695,7 @@ var DAYS = [
        +'</tbody></table>停 11/29 下午到 12/1 上午，大約 2 個 24 小時。費用以現場告示為準。'}
    ]},
  { n:4, date:'11/30', wd:'一', title:'札幌・円山咖哩・北大拜訪', color:'yellow',
+   wx:{ic:'cloud', t:'陰', temp:'0 ~ 6℃', where:'札幌', chips:[['降雨機率 40%','sky'],['早晚冷','yellow']]},
    route:'THE GATE → 大通 → 円山教授 → 北海道大學 → 晚餐成吉思汗（不開車）',
    stops:[
      {t:'07:00–08:30', title:'THE GATE 早餐（已含）', m:['walk'], d:'11/29 那晚的訂單含早餐；也可以用行政貴賓室'},
@@ -698,11 +709,11 @@ var DAYS = [
      {t:'晚上', title:'居酒屋續攤（自由）', m:['walk'], d:'見「美食」區清單'}
    ],
    notes:[
-     {k:'info', h:'天氣（11/24 預報）', b:'札幌 高 9° / 低 0°。早上散步偏冷，中午後回暖。'},
      {k:'warn', h:'中午銜接', b:'円山教授在西邊、北大在北邊，中間一定要搭計程車。11:00 準時入店、12:05 前吃完叫車，13:00 才不會趕。如果 11:00 門口已經大排長龍，就改去「北円山店」（西28丁目站旁）或直接換別家，不要拖到北大的時間。'},
      {k:'info', h:'拜訪資訊', b:'脇本敏幸教授，北海道大學大學院藥學研究院 天然物化學研究室，研究海洋與微生物來源的天然物、生合成基因（海綿共生菌、基因體探勘等）。<br>見面地點：藥學研究院 3 樓 N333 室（教授 email 確認）。藥學部在校園中央附近，從正門進去後照校園地圖走。<br>時間：教授 15:00 另有會議，13:00 開始、14:45 前結束。'}
    ]},
  { n:5, date:'12/1', wd:'二', title:'場外市場早餐・還車・返台', color:'sky',
+   wx:{ic:'sunCloud', t:'多雲時晴', temp:'4 ~ 9℃', where:'札幌', chips:[['降雨機率 40%','sky'],['白天較溫暖','yellow']]},
    route:'THE GATE → 札幌場外市場 → 新千歲機場還車 → JX851 → 桃園（約 60–70 km）',
    stops:[
      {t:'07:30', title:'取車、退房、行李上車', m:['walk','taxi'], d:'到タイムズステーション札幌駅前取車，回飯店門口接人與行李', g:[['','タイムズステーション札幌駅前 北4条西6-3']]},
@@ -715,7 +726,6 @@ var DAYS = [
      {t:'19:05', title:'抵達桃園機場第1航廈', m:['plane'], d:'JX851'}
    ],
    notes:[
-     {k:'info', h:'天氣（11/24 預報）', b:'札幌 高 9° / 低 3°。早上去場外市場、上高速前都在零度以上，路況應該比前幾天好。'},
      {k:'warn', h:'租車還車時間要改', b:'Tabirai／ORIX 預約上的還車時間是 12/1 14:30，但 JX851 15:20 起飛，14:30 才還車會來不及報到。實際排在 11:00 左右還車；請透過 Tabirai「預約資訊夾」用英文或日文通知 ORIX 會提早還車。'},
      {k:'info', h:'為什麼場外市場排這天', b:'12/1 飯店不含早餐，剛好開車去場外市場吃海鮮早餐，市場有免費停車場，吃完直接上高速去機場，不用再回市區。'}
    ]}
@@ -899,6 +909,18 @@ function renderHotels(){
 }
 
 /* ---------- 每日行程 ---------- */
+var WXIC={
+ cloud:'<svg viewBox="0 0 48 32" aria-hidden="true"><path d="M12 28Q4 28 4 21Q4 14 12 14Q14 6 23 6Q33 6 35 15Q44 15 44 22Q44 28 36 28Z" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></svg>',
+ sunCloud:'<svg viewBox="0 0 48 32" aria-hidden="true"><circle cx="34" cy="10" r="7" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/><path d="M10 29Q3 29 3 23Q3 17 10 17Q12 10 20 10Q29 10 31 18Q38 18 38 23Q38 29 31 29Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></svg>',
+ rain:'<svg viewBox="0 0 48 32" aria-hidden="true"><path d="M12 22Q4 22 4 16Q4 9 12 9Q14 2 23 2Q33 2 35 10Q44 10 44 16Q44 22 36 22Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M14 26L12 31M24 26L22 31M34 26L32 31" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></svg>'
+};
+function wxHTML(w){
+  if(!w) return '';
+  return '<div class="card wxbar"><span class="wxic">'+WXIC[w.ic]+'</span><span class="wxt">'+w.t+' <b>'+w.temp+'</b></span>'
+   +w.chips.map(function(c){ return '<span class="chip" style="background:var(--'+c[1]+')">'+c[0]+'</span>'; }).join('')
+   +'<span class="wxw">'+w.where+'・tenki.jp 11/24 22:00 預報</span></div>';
+}
+
 var cur=0, panel, tabs;
 function mapsHTML(s){
   if(!s.g) return '';
@@ -920,6 +942,7 @@ function renderDay(i){
   panel.innerHTML =
    '<div class="card dayhead" style="background:var(--'+d.color+')"><div class="txt"><span class="daylabel">DAY '+d.n+'・'+d.date+'（'+d.wd+'）</span>'
    +'<h3>'+d.title+'</h3><p class="route">'+d.route+'</p></div><div class="artbox">'+ART[i]+'</div></div>'
+   +wxHTML(d.wx)
    +'<ol class="tl">'+d.stops.map(stopHTML).join('')+'</ol>'
    +d.notes.map(function(n){ return '<div class="note '+n.k+'"><b>'+n.h+'</b>'+(n.html||n.b||'')+'</div>'; }).join('')
 ;
